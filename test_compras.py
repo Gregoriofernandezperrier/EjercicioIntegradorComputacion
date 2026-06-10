@@ -98,3 +98,9 @@ def test_total_importe_general():
     resultado = procesar_corte_control(filas)
     # SUC01: 1650.0 + SUC02: 2*200 = 400.0 => 2050.0
     assert resultado["totales_generales"]["total_importe"] == pytest.approx(2050.0)
+
+
+def test_error_intencional():
+    # Este test falla intencionalmente para verificar que el pipeline bloquea el merge
+    resultado = procesar_corte_control(FILAS_SUC01)
+    assert resultado["totales_generales"]["cantidad_sucursales"] == 99
