@@ -3,6 +3,15 @@
 Procesamiento y análisis de registros de compras de múltiples sucursales a partir de un archivo CSV.
 Implementa ordenamiento burbuja y corte de control para generar reportes por sucursal.
 
+## Descripción del algoritmo
+
+El sistema realiza los siguientes pasos:
+
+1. **Lectura** del CSV de entrada con registros de compras desordenados
+2. **Ordenamiento** de los registros por sucursal usando el algoritmo de burbuja
+3. **Corte de control** por sucursal y producto para acumular totales
+4. **Reporte** con totales por sucursal, producto de mayor y menor importe, y totales generales
+
 ## Archivos del proyecto
 
 | Archivo | Descripción |
@@ -36,3 +45,8 @@ Los tests cubren:
 - Detección del producto con mayor y menor importe por sucursal
 - Procesamiento completo de una sucursal
 - Conteo de sucursales y total de importe general
+
+## Integración continua
+
+Cada pull request hacia `main` dispara automáticamente el pipeline de CI definido en `.github/workflows/ci.yml`.
+El merge solo se permite si todos los tests pasan.
